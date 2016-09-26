@@ -34,7 +34,7 @@ export default class Container extends Component {
 
       <div style={containerStyle}>
         {imgArray.map(function(src, index){
-          return <Tile src={src} name="kelly"/>;
+          return <Tile key={index} src={src} name="kelly"/>;
         })}
       </div>
     );
