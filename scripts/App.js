@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header             from './components/header.jsx';
-import Container from  './components/container.jsx';
+import Container          from './components/container.jsx';
+import Tile               from './components/tile.jsx';
 
 export default class App extends Component {
   render() {
@@ -8,6 +9,7 @@ export default class App extends Component {
       <div>
         <Header />
         <Container />
+        <Tile />
       </div>
     );
   }
