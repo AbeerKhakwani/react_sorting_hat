@@ -8,7 +8,6 @@ export default class Header extends Component {
       backgroundColor: 'chartreuse',
     }
     return (
-      // Add your component markup and other subcomponent references here.
       <h1 style={headerStyle}>Personality Test</h1>
     );
   }
