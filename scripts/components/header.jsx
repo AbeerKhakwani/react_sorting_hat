@@ -5,7 +5,7 @@ export default class Header extends Component {
     const headerStyle ={
       padding: 20,
       textAlign: 'center',
-      backgroundColor: 'chartreuse',
+      backgroundColor: 'lightBlue',
     }
     return (
       <h1 style={headerStyle}>Personality Test</h1>
