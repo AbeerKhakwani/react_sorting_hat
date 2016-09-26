@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 export default class Tile extends Component {
   constructor(props, state) {
   super(props, state);
-  this.props = {
-    name: name,
-    image: "./../../img/baby.png"
-  }
+
   this.state = {
     visible: true,
     };
@@ -24,7 +21,7 @@ export default class Tile extends Component {
     return (
       <div>
         <h3 style={tileStyle}>{name}</h3>
-        <img src={this.props.src} alt="boohoo" className="img-responsive"/>
+        <img src={this.props.src} alt={this.props.src} />
       </div>
     );
   }
