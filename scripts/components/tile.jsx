@@ -8,7 +8,8 @@ export default class Tile extends Component {
       backgroundColor: 'lightBlue',
     }
     return (
-      <h3 style={tileStyle}>Images here</h3>
+        <img src={this.prop.src} alt="boohoo" className="img-responsive"/>
+
     );
   }
 }
