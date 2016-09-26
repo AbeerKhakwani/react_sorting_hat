@@ -24,7 +24,7 @@ export default class Tile extends Component {
     return (
       <div>
         <h3 style={tileStyle}>{name}</h3>
-        // <img src={this.prop.src} alt="boohoo" className="img-responsive"/>
+        <img src={this.props.src} alt="boohoo" className="img-responsive"/>
       </div>
     );
   }
