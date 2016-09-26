@@ -3,6 +3,7 @@ import Tile               from './tile.jsx';
 
 
 export default class Container extends Component {
+
   render() {
     // let imgArray = ["img/owl","img/baby.png",
     //               "img/bellpepper.png",
@@ -27,11 +28,18 @@ export default class Container extends Component {
   const containerStyle ={
     display: 'flex', /* or inline-flex */
     backgroundColor: 'yellow',
+    flexWrap: 'wrap'
   }
     return (
       // Add your component markup and other subcomponent references here.
       <div style={containerStyle}>
-        <p>This is the container</p>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
+          <Tile src="../img/globe.png" name="kelly"/>
           <Tile src="../img/globe.png" name="kelly"/>
       </div>
     );

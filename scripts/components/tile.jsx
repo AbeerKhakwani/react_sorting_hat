@@ -14,17 +14,20 @@ export default class Tile extends Component {
   render() {
     name = this.props.name
     const tileStyle ={
-      padding: 20,
+      margin: 5,
       textAlign: 'center',
-      backgroundColor: 'lightBlue',
-      width: 50,
+      flexGrow: 1
+    }
+    const imgStyle = {
+      borderSize: 10,
+      borderStyle: 'solid',
+      borderColor: 'lightBlue',
     }
     var name = this.props.name;
 
     return (
-      <div>
-        <h3 style={tileStyle}>{name}</h3>
-        <img src={this.props.src} alt="boohoo" className="img-responsive"/>
+      <div style={tileStyle}>
+        <img style={imgStyle} src={this.props.src} alt="boohoo" className="img-responsive"/>
       </div>
     );
   }
