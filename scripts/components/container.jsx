@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
+import Tile               from './tile.jsx';
+
 
 export default class Container extends Component {
   render() {
-  
-  
     const array = ["img/owl","img/baby.png",
                   "img/bellpepper.png",
                   "img/duck.png",
@@ -23,6 +23,7 @@ export default class Container extends Component {
                   "img/lemon.png",
                   "img/hammer.png",
                   "img/glove.png",
+
   const containerStyle ={
     display: 'flex', /* or inline-flex */
     backgroundColor: 'yellow',
@@ -31,6 +32,7 @@ export default class Container extends Component {
       // Add your component markup and other subcomponent references here.
       <div style={containerStyle}>
         <p>This is the container</p>
+          <Tile name="kelly"/>
       </div>
     );
   }
