@@ -8,11 +8,11 @@ export default class Container extends Component {
     this.state = {
       imgArray: []
     };
-    this.removeTile = this.removeTile.bind(this);
+    // this.removeTile = this.removeTile.bind(this);
   }
 
-  removeTile(){
-    console.log("this is removeTile");
+  removeTile(key){
+    console.log("this is Tile #" + key);
   }
 
 
@@ -47,7 +47,7 @@ export default class Container extends Component {
     return (
       <div style={containerStyle}>
         {imgArray.map(function(src, index){
-          return <Tile key={index} src={src} removeTile={removeTile} />;
+          return <Tile key={index} id={index} src={src} removeTile={removeTile} />;
         })}
       </div>
     );

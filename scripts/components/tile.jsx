@@ -21,10 +21,10 @@ export default class Tile extends Component {
       height: 100,
       backgroundColor: 'white'
     }
-
+    console.log(this.props)
     return (
       <div style={tileStyle}>
-        <img style={imgStyle} src={this.props.src} onClick={this.props.removeTile} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
+        <img style={imgStyle} src={this.props.src} onClick={(e) => { this.props.removeTile(this.props.id)}} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
       </div>
     );
   }
