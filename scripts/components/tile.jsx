@@ -22,9 +22,12 @@ export default class Tile extends Component {
       flexGrow: 1
     }
     const imgStyle = {
-      borderSize: 10,
+      borderWidth: 7.5,
       borderStyle: 'solid',
       borderColor: 'lightBlue',
+      width: 100,
+      height: 100,
+      backgroundColor: 'white'
     }
     var name = this.props.name;
 

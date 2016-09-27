@@ -5,7 +5,7 @@ import Container          from './components/container.jsx';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{backgroundColor:'lightYellow'}}>
         <Header />
         <Container />
       </div>

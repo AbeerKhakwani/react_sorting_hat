@@ -29,13 +29,13 @@ export default class Container extends Component {
 
   const containerStyle ={
     display: 'flex',
-    backgroundColor: 'white',
+    // backgroundColor: 'lightYellow',
     flexWrap: 'wrap'
   }
     return (
       <div style={containerStyle}>
         {imgArray.map(function(src, index){
-          return <Tile key={index} src={src} alt={src.split("/").pop()}/>;
+          return <Tile key={index} src={src} alt={src}/>;
         })}
       </div>
     );
