@@ -13,7 +13,7 @@ export default class Tile extends Component {
   hideTile(){
     this.setState({visible: "false"},()=>{console.log(this.state.visible);});
   }
-  
+
   render() {
 
     const tileStyle ={
@@ -30,7 +30,7 @@ export default class Tile extends Component {
 
     return (
       <div style={tileStyle} onClick ={this.hideTile}>
-        <img style={imgStyle} src={this.props.src} alt={this.props.src} />
+        <img style={imgStyle} src={this.props.src} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
       </div>
     );
   }

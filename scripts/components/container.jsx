@@ -33,12 +33,15 @@ export default class Container extends Component {
     flexWrap: 'wrap'
   }
     return (
-
       <div style={containerStyle}>
         {imgArray.map(function(src, index){
-          return <Tile key={index} src={src} name="kelly"/>;
+          return <Tile key={index} src={src} alt={src.split("/").pop()}/>;
         })}
       </div>
     );
   }
 }
+// next steps:
+// - when state of tile is false, call parent function to splice from array (using key)
+// - associate with houses/personalities
+// - alt
