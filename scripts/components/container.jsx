@@ -3,8 +3,21 @@ import Tile               from './tile.jsx';
 
 
 export default class Container extends Component {
+  constructor(props, state) {
+    super(props, state);
+    this.state = {
+      imgArray: []
+    };
+    this.removeTile = this.removeTile.bind(this);
+  }
+
+  removeTile(){
+    console.log("this is removeTile");
+  }
+
 
   render() {
+    let removeTile = this.removeTile;
 
     let imgArray = ["img/owl.png",
                   "img/baby.png",
@@ -29,13 +42,12 @@ export default class Container extends Component {
 
   const containerStyle ={
     display: 'flex',
-    // backgroundColor: 'lightYellow',
     flexWrap: 'wrap'
   }
     return (
       <div style={containerStyle}>
         {imgArray.map(function(src, index){
-          return <Tile key={index} src={src} />;
+          return <Tile key={index} src={src} removeTile={removeTile} />;
         })}
       </div>
     );

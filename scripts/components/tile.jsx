@@ -1,17 +1,9 @@
 import React, {Component} from 'react';
+import Container          from './container.jsx';
 
 export default class Tile extends Component {
   constructor(props, state) {
   super(props, state);
-    this.state = {
-      visible:"true"
-    };
-    this.hideTile  = this.hideTile.bind(this);
-
-  }
-
-  hideTile(){
-    this.setState({visible: "false"},()=>{console.log(this.state.visible);});
   }
 
   render() {
@@ -29,11 +21,10 @@ export default class Tile extends Component {
       height: 100,
       backgroundColor: 'white'
     }
-    var name = this.props.name;
 
     return (
-      <div style={tileStyle} onClick ={this.hideTile}>
-        <img style={imgStyle} src={this.props.src} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
+      <div style={tileStyle}>
+        <img style={imgStyle} src={this.props.src} onClick={this.props.removeTile} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
       </div>
     );
   }

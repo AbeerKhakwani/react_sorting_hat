@@ -4,5 +4,5 @@ import App from './App';
 
 render(
   <App />,
-  document.getElementById('abeer')
+  document.getElementById('root')
 );
