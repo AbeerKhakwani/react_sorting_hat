@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Tile               from './tile.jsx';
 import _                  from 'lodash';
+import findKey            from 'lodash.findkey';
 
 export default class Container extends Component {
   constructor(props, state) {
@@ -27,8 +28,13 @@ export default class Container extends Component {
                     {src:"img/lemon.png", house : "r"},
                     {src:  "img/hammer.png", house : "g"},
                     {src:"img/glove.png", house : "s"}],
-        savedImageArray : [{ 'h' :0, 'g': 0,'r': 0,'s' :0}],
+        savedImageArray : { 'h' : 0, 'g': 0,'r': 0,'s' : 0},
         result: false,
+        obj: {
+          "01": ["a","b"],
+          "03": '3',
+          "04": ["e","c"]
+        },
     };
     this.removeTile = this.removeTile.bind(this);
     this.checkingHouse = this.checkingHouse.bind(this);
@@ -39,25 +45,28 @@ export default class Container extends Component {
     var savedImageArray = this.state.savedImageArray;
     var clonedImgArray = _.clone(this.state.imgArray, true);
     var savedImage = clonedImgArray.splice(key, 1);
-    var house = savedImage[0].house;    
+    var house = savedImage[0].house;
     ////////////
-    savedImageArray[0][house] += 1;
+    savedImageArray[house] += 1;
     this.setState({imgArray: clonedImgArray});
     this.checkingHouse();
+    console.log(savedImageArray[house]);
 
   }
  checkingHouse()
-  { 
-    var count = 0; 
-    var savedImageArray = this.state.savedImageArray;    
-    
-    savedImageArray
-    {savedImageArray.map(function(house, index){
-      count += 1;
-    })}      
-    console.log(count + "    count");
-
-}  
+  {
+    var obj = this.state.obj;
+    var savedImageArray = this.state.savedImageArray;
+    // var fakeArray = {abeer: 'cake'};
+    // console.log(fakeArray);
+    // var pcc = _.findKey( fakeArray, 'cake' );
+    // console.log({pcc});
+    // console.log(fakeArray);
+    // var housefinder = _.findKey(obj, (item) => (item.indexOf(3) !== -1));
+    var housefinder = _.findKey(obj, '3');
+    console.log(housefinder);
+    console.log(savedImageArray);
+}
 render() {
     let removeTile = this.removeTile;
     let imgArray = this.state.imgArray;
