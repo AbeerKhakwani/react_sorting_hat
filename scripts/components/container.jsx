@@ -27,7 +27,7 @@ export default class Container extends Component {
                     {src:"img/lemon.png", house : "r"},
                     {src:  "img/hammer.png", house : "g"},
                     {src:"img/glove.png", house : "s"}],
-        savedImageArray : [],
+        savedImageArray : [{ 'h' :0, 'g': 0,'r': 0,'s' :0}],
         result: false,
     };
     this.removeTile = this.removeTile.bind(this);
@@ -39,7 +39,9 @@ export default class Container extends Component {
     var savedImageArray = this.state.savedImageArray;
     var clonedImgArray = _.clone(this.state.imgArray, true);
     var savedImage = clonedImgArray.splice(key, 1);
-    savedImageArray.push(savedImage[0].house);
+    var house = savedImage[0].house;    
+    ////////////
+    savedImageArray[0][house] += 1;
     this.setState({imgArray: clonedImgArray});
     this.checkingHouse();
 
@@ -48,6 +50,8 @@ export default class Container extends Component {
   { 
     var count = 0; 
     var savedImageArray = this.state.savedImageArray;    
+    
+    savedImageArray
     {savedImageArray.map(function(house, index){
       count += 1;
     })}      
