@@ -6,27 +6,27 @@ export default class Container extends Component {
   constructor(props, state) {
     super(props, state);
     this.state = {
-        imgArray: [   "img/owl.png",
-                      "img/baby.png",
-                      "img/bellpepper.png",
-                      "img/duck.png",
-                      "img/flag.png",
-                      "img/globe.png",
-                      "img/lighter.png",
-                      "img/pretzel.png",
-                      "img/rubberduck.png",
-                      "img/suitcase.png",
-                      "img/teeth.png",
-                      "img/tomatoes.png",
-                      "img/camera.png",
-                      "img/pliers.png",
-                      "img/flowerpot.png",
-                      "img/pig.png",
-                      "img/pigeon.png",
-                      "img/lemon.png",
-                      "img/hammer.png",
-                      "img/glove.png"
-                    ]
+        imgArray: [ {src: "img/owl.png", house : "h"},
+                    {src:  "img/baby.png", house : "g"},
+                    {src: "img/bellpepper.png", house : "h"},
+                    {src: "img/duck.png", house : "h"},
+                    {src: "img/flag.png", house : "h"},
+                    {src: "img/globe.png", house : "h"},
+                    {src: "img/lighter.png", house : "h"},
+                    {src: "img/pretzel.png", house : "h"},
+                    {src: "img/rubberduck.png", house : "h"},
+                    {src: "img/rubberduck.png", house : "g"},
+                    {src: "img/suitcase.png", house : "h"},
+                    {src: "img/teeth.png", house : "h"},
+                    {src: "img/tomatoes.png", house : "h"},
+                    {src: "img/camera.png", house : "h"},
+                    {src: "img/pliers.png", house : "h"},
+                    {src: "img/flowerpot.png", house : "h"},
+                    {src: "img/pig.png", house : "h"},
+                    {src:"img/pigeon.png", house : "h"},
+                    {src:"img/lemon.png", house : "h"},
+                    {src:  "img/hammer.png", house : "h"},
+                    {src:"img/glove.png", house : "h"}]
     };
     this.removeTile = this.removeTile.bind(this);
   }
@@ -48,8 +48,10 @@ export default class Container extends Component {
   }
     return (
       <div style={containerStyle}>
-        {imgArray.map(function(src, index){
-          return <Tile key={index} id={index} src={src} removeTile={removeTile} />;
+        {imgArray.map(function(object, index){
+          console.log(object);
+          console.log(object.src);
+          return <Tile key={index} id={object.id} src={object.src} removeTile={removeTile} />;
         })}
       </div>
     );

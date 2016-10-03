@@ -25,7 +25,7 @@ export default class Tile extends Component {
 
     return (
       <div style={tileStyle}>
-        <img style={imgStyle} src={this.props.src} onClick={(e) => { this.props.removeTile(this.props.id)}} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
+        <img style={imgStyle} src={this.props.src} onClick={(e) => {this.props.removeTile(this.props.id)}} alt={(this.props.src.split("/").pop()).replace(/.png/,'')} />
       </div>
     );
   }
