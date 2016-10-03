@@ -28,23 +28,33 @@ export default class Container extends Component {
                     {src:  "img/hammer.png", house : "g"},
                     {src:"img/glove.png", house : "s"}],
         savedImageArray : [],
+        result: false,
     };
     this.removeTile = this.removeTile.bind(this);
-  }
+    this.checkingHouse = this.checkingHouse.bind(this);
 
+  }
 
   removeTile(key){
     var savedImageArray = this.state.savedImageArray;
     var clonedImgArray = _.clone(this.state.imgArray, true);
     var savedImage = clonedImgArray.splice(key, 1);
     savedImageArray.push(savedImage[0].house);
-    this.setState({imgArray: clonedImgArray})
-    console.log(savedImage);
-    console.log("this is the savedImageArray" + savedImageArray);
-    console.log(savedImageArray);
-  }
+    this.setState({imgArray: clonedImgArray});
+    this.checkingHouse();
 
-  render() {
+  }
+ checkingHouse()
+  { 
+    var count = 0; 
+    var savedImageArray = this.state.savedImageArray;    
+    {savedImageArray.map(function(house, index){
+      count += 1;
+    })}      
+    console.log(count + "    count");
+
+}  
+render() {
     let removeTile = this.removeTile;
     let imgArray = this.state.imgArray;
 
