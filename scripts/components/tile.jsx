@@ -21,7 +21,6 @@ export default class Tile extends Component {
       height: 100,
       backgroundColor: 'white'
     }
-    console.log(this.props)
 
     return (
       <div style={tileStyle}>

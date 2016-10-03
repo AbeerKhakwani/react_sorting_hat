@@ -26,17 +26,23 @@ export default class Container extends Component {
                     {src:"img/pigeon.png", house : "h"},
                     {src:"img/lemon.png", house : "r"},
                     {src:  "img/hammer.png", house : "g"},
-                    {src:"img/glove.png", house : "s"}]
+                    {src:"img/glove.png", house : "s"}],
+        savedImageArray : [],
     };
     this.removeTile = this.removeTile.bind(this);
   }
 
-  removeTile(key){
-    var  clonedImgArray = _.clone(this.state.imgArray, true);
-    var savedImage = clonedImgArray.splice(key, 1);
-    this.setState({imgArray: clonedImgArray})
-  }
 
+  removeTile(key){
+    var savedImageArray = this.state.savedImageArray;
+    var clonedImgArray = _.clone(this.state.imgArray, true);
+    var savedImage = clonedImgArray.splice(key, 1);
+    savedImageArray.push(savedImage[0].house);
+    this.setState({imgArray: clonedImgArray})
+    console.log(savedImage);
+    console.log("this is the savedImageArray" + savedImageArray);
+    console.log(savedImageArray);
+  }
 
   render() {
     let removeTile = this.removeTile;
@@ -49,9 +55,7 @@ export default class Container extends Component {
     return (
       <div style={containerStyle}>
         {imgArray.map(function(object, index){
-          console.log(object);
-          console.log(object.src);
-          return <Tile key={index} id={object.id} src={object.src} removeTile={removeTile} />;
+          return <Tile key={index} id={index} src={object.src} removeTile={removeTile} />;
         })}
       </div>
     );
