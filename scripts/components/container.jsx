@@ -28,13 +28,7 @@ export default class Container extends Component {
                     {src:"img/lemon.png", house : "r"},
                     {src:  "img/hammer.png", house : "g"},
                     {src:"img/glove.png", house : "s"}],
-        savedImageArray : { 'h' : 0, 'g': 0,'r': 0,'s' : 0},
-        result: false,
-        obj: {
-          "01": ["a","b"],
-          "03": '3',
-          "04": ["e","c"]
-        },
+        savedImageArray : { "h" : 0,"g" : 0,  "r" : 0,"s" : 0 },
     };
     this.removeTile = this.removeTile.bind(this);
     this.checkingHouse = this.checkingHouse.bind(this);
@@ -50,22 +44,15 @@ export default class Container extends Component {
     savedImageArray[house] += 1;
     this.setState({imgArray: clonedImgArray});
     this.checkingHouse();
-    console.log(savedImageArray[house]);
+    // console.log(savedImageArray[house]);
 
   }
  checkingHouse()
   {
-    var obj = this.state.obj;
     var savedImageArray = this.state.savedImageArray;
-    // var fakeArray = {abeer: 'cake'};
-    // console.log(fakeArray);
-    // var pcc = _.findKey( fakeArray, 'cake' );
-    // console.log({pcc});
-    // console.log(fakeArray);
-    // var housefinder = _.findKey(obj, (item) => (item.indexOf(3) !== -1));
-    var housefinder = _.findKey(obj, '3');
+    
+    var housefinder = _.findKey(savedImageArray, function(house){return house >= 3; });
     console.log(housefinder);
-    console.log(savedImageArray);
 }
 render() {
     let removeTile = this.removeTile;
