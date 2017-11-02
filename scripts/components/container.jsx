@@ -16,7 +16,6 @@ export default class Container extends Component {
                     {src: "img/lighter.png", house : "h"},
                     {src: "img/pretzel.png", house : "g"},
                     {src: "img/rubberduck.png", house : "s"},
-                    {src: "img/rubberduck.png", house : "r"},
                     {src: "img/suitcase.png", house : "h"},
                     {src: "img/teeth.png", house : "g"},
                     {src: "img/tomatoes.png", house : "s"},
@@ -28,7 +27,7 @@ export default class Container extends Component {
                     {src:"img/lemon.png", house : "r"},
                     {src:  "img/hammer.png", house : "g"},
                     {src:"img/glove.png", house : "s"}],
-        savedImageArray : { "h" : 0,"g" : 0,  "r" : 0,"s" : 0 },
+        savedImageArray :{  "h" : 0, "g" : 0,  "r" : 0,"s" : 0 }
     };
     this.removeTile = this.removeTile.bind(this);
     this.checkingHouse = this.checkingHouse.bind(this);
@@ -40,20 +39,21 @@ export default class Container extends Component {
     var clonedImgArray = _.clone(this.state.imgArray, true);
     var savedImage = clonedImgArray.splice(key, 1);
     var house = savedImage[0].house;
-    ////////////
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
     savedImageArray[house] += 1;
     this.setState({imgArray: clonedImgArray});
     this.checkingHouse();
-    // console.log(savedImageArray[house]);
 
   }
- checkingHouse()
+  checkingHouse()
   {
+    console.log(this.state.savedImageArray);
     var savedImageArray = this.state.savedImageArray;
-    
-    var housefinder = _.findKey(savedImageArray, function(house){return house >= 3; });
-    console.log(housefinder);
-}
+    Object.keys(savedImageArray).map(function(key,index) {
+        console.log("This is the "+key+" ,"+index)
+    });
+      }
 render() {
     let removeTile = this.removeTile;
     let imgArray = this.state.imgArray;
